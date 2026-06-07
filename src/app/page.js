@@ -1,4 +1,5 @@
 "use client";
+import FaqAccordion from "@/components/FaqAccordion/FaqAccordion";
 import HeroSection from "@/components/HeroSection";
 import HowWeWork from "@/components/HowWeWork";
 import ServicesSection from "@/components/ServiceSection";
@@ -11,6 +12,7 @@ export default function Home() {
     <TrustedBrands />
     <ServicesSection />
     <HowWeWork />
+    <FaqAccordion />
     </>
   );
 }

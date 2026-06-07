@@ -1,10 +1,15 @@
+import PopularService1 from '@/components/Services/PopularService1'
+import ServiceImageSlider from '@/components/Services/ServiceImageSlider'
+import ServicesHeader from '@/components/Services/ServicesHeader'
 import React from 'react'
 
 const page = () => {
   return (
-    <div className='mb-4'>
-      Services Page Comming Soon
-    </div>
+    <>
+     <ServicesHeader />
+    <PopularService1 />
+    <ServiceImageSlider />
+    </>
   )
 }
 
