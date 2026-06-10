@@ -1,10 +1,15 @@
+import ContactForm from '@/components/Contact/ContactForm'
+import ContactHeader from '@/components/Contact/ContactHeader'
+import ContactMap from '@/components/Contact/ContactMap'
 import React from 'react'
 
 const page = () => {
   return (
-    <div className='mb-4'>
-      Contact Page Comming Soon
-    </div>
+    <>
+     <ContactHeader />
+     <ContactForm />
+     <ContactMap />
+    </>
   )
 }
 

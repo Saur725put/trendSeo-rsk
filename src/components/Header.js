@@ -24,7 +24,7 @@ export default function Header() {
         
         <Link href="/" className="flex items-center gap-2 group">
           <img 
-            src="/images/trendSEO1.jpeg" 
+            src="/images/trendSeoLogo.jpeg" 
             alt="TrendSEO Logo" 
             className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
           />

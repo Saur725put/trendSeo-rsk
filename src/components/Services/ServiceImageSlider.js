@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useRef, useEffect, useCallback, useState } from "react";
 
 const DATA = [

@@ -13,12 +13,12 @@ if (typeof window !== "undefined") {
 }
 
 const crewCards = [
-  { id: 1, src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop&crop=faces&q=80", rot: -9, depth: 14 },
-  { id: 2, src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=faces&q=80", rot: -5, depth: 10 },
-  { id: 3, src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&crop=faces&q=80", rot: -2, depth: 8 },
-  { id: 4, src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=600&fit=crop&crop=faces&q=80", rot: 3, depth: 12 },
-  { id: 5, src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=600&fit=crop&crop=faces&q=80", rot: 0, depth: 6 },
-  { id: 6, src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=600&fit=crop&crop=faces&q=80", rot: 4, depth: 11 },
+  { id: 6, src: "/images/teams/garvit.png", rot: 4, depth: 11 },
+  { id: 1, src: "/images/teams/sourav.png", rot: -9, depth: 14 },
+  { id: 3, src: "/images/teams/shaswat.png", rot: -2, depth: 8 },
+  { id: 4, src: "/images/teams/Pratyaksh.png", rot: 3, depth: 12 },
+  { id: 5, src: "/images/teams/Sumit.png", rot: 0, depth: 6 },
+  { id: 2, src: "/images/teams/navneet.png", rot: -5, depth: 10 },
   { id: 7, src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop&crop=faces&q=80", rot: 7, depth: 9 },
   { id: 8, src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&crop=faces&q=80", rot: -4, depth: 13 },
 ];
