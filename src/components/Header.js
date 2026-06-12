@@ -58,7 +58,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="header-logo flex items-center group">
             <img
-              src="/images/trendSeo12.jpeg"
+              src="/images/trendSEO12.jpeg"
               alt="TrendSEO Logo"
               style={{ height: "40px", width: "auto", objectFit: "contain" }}
               className="transition-transform duration-300 group-hover:scale-[1.02]"
@@ -110,7 +110,7 @@ export default function Header() {
             <div className="flex items-center justify-between mb-10">
               <Link href="/" onClick={() => setDrawerOpen(false)}>
                 <img
-                  src="/images/trendSeo12.jpeg"
+                  src="/images/trendSEO12.jpeg"
                   alt="TrendSEO Logo"
                   style={{ height: "40px", width: "auto", objectFit: "contain" }}
                 />
