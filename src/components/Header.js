@@ -34,17 +34,17 @@ export default function Header() {
         }
       `}</style>
 
-      {/* Header BG set to #000000 and border changed to zinc-800 for subtle dark separation */}
+      {/* Removed "border-b" class to completely clean the line under the navbar */}
       <header
         style={{ backgroundColor: "#000000" }}
-        className="w-full sticky top-0 z-50 border-b "
+        className="w-full sticky top-0 z-50"
       >
         <div
           className="w-full max-w-[1320px] mx-auto px-6 md:px-12 flex justify-between items-center relative"
           style={{ height: "72px" }}
         >
 
-          {/* Hamburger — mobile only (Changed bars to white/#ffffff) */}
+          {/* Hamburger — mobile only */}
           <button
             onClick={() => setDrawerOpen(true)}
             aria-label="Open menu"
@@ -101,7 +101,6 @@ export default function Header() {
           className="fixed inset-0 z-[999] flex"
           onClick={() => setDrawerOpen(false)}
         >
-          {/* Drawer background set to #000000 and border-right added for dark separation */}
           <div
             style={{ backgroundColor: "#000000", width: "340px", maxWidth: "85vw" }}
             className="relative h-full flex flex-col px-8 py-8 shadow-2xl border-r border-zinc-800"
@@ -111,12 +110,11 @@ export default function Header() {
             <div className="flex items-center justify-between mb-10">
               <Link href="/" onClick={() => setDrawerOpen(false)}>
                 <img
-                  src="/images/trendSeoLogo.jpeg"
+                  src="/images/trendSeo12.jpeg"
                   alt="TrendSEO Logo"
                   style={{ height: "40px", width: "auto", objectFit: "contain" }}
                 />
               </Link>
-              {/* Close Button changed to white text and subtle border */}
               <button
                 onClick={() => setDrawerOpen(false)}
                 aria-label="Close menu"
@@ -158,7 +156,7 @@ export default function Header() {
             </nav>
           </div>
 
-          {/* Backdrop (Darkened the overlay backdrop for true dark look) */}
+          {/* Backdrop */}
           <div style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.7)", backdropFilter: "blur(4px)" }} />
         </div>
       )}
