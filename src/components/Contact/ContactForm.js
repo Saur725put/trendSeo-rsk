@@ -56,8 +56,8 @@ const socialLinks = [
 export default function ContactForm() {
     return (
         <section
-            style={{ backgroundColor: "#ffffff" }}
-            className="w-full py-24 px-6 md:px-12"
+            style={{ backgroundColor: "#181818" }} // Updated background color to exact #181818
+            className="w-full py-24 px-6 md:px-12 bg-[#181818] text-white"
         >
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
@@ -76,11 +76,11 @@ export default function ContactForm() {
                                     transition={{ duration: 0.4, delay: i * 0.1 }}
                                     className="flex flex-col gap-1"
                                 >
-                                    <span className="text-lg font-bold text-zinc-900">
+                                    <span className="text-lg font-bold text-white">
                                         {loc.country}
                                     </span>
                                     {loc.address.map((line) => (
-                                        <span key={line} className="text-sm text-zinc-500 leading-relaxed">
+                                        <span key={line} className="text-sm text-zinc-400 leading-relaxed">
                                             {line}
                                         </span>
                                     ))}
@@ -89,7 +89,7 @@ export default function ContactForm() {
                         </div>
 
                         {/* Divider */}
-                        <div className="w-full h-px bg-zinc-100" />
+                        <div className="w-full h-px bg-white/10" />
 
                         {/* Email */}
                         <motion.div
@@ -99,10 +99,10 @@ export default function ContactForm() {
                             transition={{ duration: 0.4, delay: 0.35 }}
                             className="flex flex-col gap-1"
                         >
-                            <span className="text-lg font-bold px-6 text-zinc-900">Email</span>
+                            <span className="text-lg font-bold px-6 text-white">Email</span>
                             <a
-                                href="mailto:info@digirocket.io"
-                                className="text-sm text-zinc-500 px-6 hover:text-zinc-900 transition-colors duration-200"
+                                href="mailto:info@trendSEO.com"
+                                className="text-sm text-zinc-400 px-6 hover:text-white transition-colors duration-200"
                             >
                                 info@trendSEO.com
                             </a>
@@ -121,7 +121,7 @@ export default function ContactForm() {
                                     key={label}
                                     href={href}
                                     aria-label={label}
-                                    className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 transition-all duration-200"
+                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-white/10 hover:text-white transition-all duration-200 border border-white/5"
                                 >
                                     <Icon />
                                 </a>
@@ -142,7 +142,7 @@ export default function ContactForm() {
                         >
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                                    <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                                         Full Name
                                     </label>
                                     <input
@@ -150,12 +150,12 @@ export default function ContactForm() {
                                         id="name"
                                         required
                                         placeholder="John Doe"
-                                        className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all duration-200 text-sm"
+                                        className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:bg-[#2a2a2a] transition-all duration-200 text-sm"
                                     />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="companyName" className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                                    <label htmlFor="companyName" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                                         Company Name
                                     </label>
                                     <input
@@ -163,14 +163,14 @@ export default function ContactForm() {
                                         id="companyName"
                                         required
                                         placeholder="Red Cat Panda"
-                                        className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all duration-200 text-sm"
+                                        className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:bg-[#2a2a2a] transition-all duration-200 text-sm"
                                     />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                                         Work Email
                                     </label>
                                     <input
@@ -178,12 +178,12 @@ export default function ContactForm() {
                                         id="email"
                                         required
                                         placeholder="john@company.com"
-                                        className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all duration-200 text-sm"
+                                        className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:bg-[#2a2a2a] transition-all duration-200 text-sm"
                                     />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                                         Phone Number
                                     </label>
                                     <input
@@ -191,13 +191,13 @@ export default function ContactForm() {
                                         id="phone"
                                         required
                                         placeholder="+1 (555) 000-0000"
-                                        className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all duration-200 text-sm"
+                                        className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:bg-[#2a2a2a] transition-all duration-200 text-sm"
                                     />
                                 </div>
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <label htmlFor="websiteUrl" className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                                <label htmlFor="websiteUrl" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                                     Website URL
                                 </label>
                                 <input
@@ -205,12 +205,12 @@ export default function ContactForm() {
                                     id="websiteUrl"
                                     required
                                     placeholder="https://example.com"
-                                    className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all duration-200 text-sm"
+                                    className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:bg-[#2a2a2a] transition-all duration-200 text-sm"
                                 />
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <label htmlFor="projectDetails" className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                                <label htmlFor="projectDetails" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                                     Tell us about your project
                                 </label>
                                 <textarea
@@ -218,7 +218,7 @@ export default function ContactForm() {
                                     rows={5}
                                     required
                                     placeholder="Tell us about your product, targets, or specific milestones you want to hit..."
-                                    className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all duration-200 text-sm resize-none"
+                                    className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-white focus:bg-[#2a2a2a] transition-all duration-200 text-sm resize-none"
                                 />
                             </div>
 

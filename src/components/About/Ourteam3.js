@@ -2,12 +2,13 @@ import React from 'react';
 import '@/styles/Ourteam3Style.css'
 
 const team = [
-  { id: 1, name: "Sumit Sisodiya", role: "Founder", img: "/images/teams/Sumit.png" },
+  { id: 1, name: "Sumit Sisodiya", role: "Founder", img: "/images/teams/Sumit11.jpeg" },
   { id: 2, name: "Pratyaksh Srivastava", role: "Co-Founder", img: "/images/teams/Pratyaksh.png" },
   { id: 3, name: "Garvit Sharma", role: "SEM Expert", img: "/images/teams/garvit.png" },
   { id: 4, name: "Shashwat Srivastava", role: "Performance Marketing Exec.", img: "/images/teams/shaswat.png" },
   { id: 5, name: "Navneet Raj", role: "SEO Executive", img: "/images/teams/navneet.png" },
   { id: 6, name: "Saurabh Kumar Singh", role: "MERN Developer", img: "/images/teams/sourav.png" },
+  { id: 7, name: "Mahesh Gajai", role: "Wordpress Developer", img: "/images/teams/mahesh.jpeg" },
 ];
 
 const Ourteam3 = () => {

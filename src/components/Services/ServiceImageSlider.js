@@ -40,7 +40,6 @@ export default function IndustryExpertise() {
   const lockRef = useRef(false);
   const [center, setCenter] = useState(INIT);
   const [isMobile, setIsMobile] = useState(false);
-  // Suppress card transitions during the silent clone-jump to prevent blink
   const [isJumping, setIsJumping] = useState(false);
 
   useEffect(() => {
@@ -94,7 +93,6 @@ export default function IndustryExpertise() {
         const needsReset = cur >= N * 2 || cur < N;
         if (!needsReset) return cur;
         const r = cur >= N * 2 ? cur - N : cur + N;
-        // Freeze card transitions, jump track, then unfreeze next paint
         setIsJumping(true);
         move(r, false);
         requestAnimationFrame(() =>
@@ -126,7 +124,6 @@ export default function IndustryExpertise() {
     touchStartX.current = null;
   };
 
-  // Card transition string — suppressed during clone jump
   const cardTransition = isJumping
     ? "none"
     : "filter 0.85s ease, opacity 0.85s ease, transform 0.85s cubic-bezier(0.45,0,0.2,1)";
@@ -138,7 +135,8 @@ export default function IndustryExpertise() {
   return (
     <section style={{
       width: "100%",
-      background: "#E8EAF6",
+      background: "#101010", // Changed background color parameter to exact #101010
+      color: "#ffffff",     // Handled text standard layout contrast parameters
       padding: isMobile ? "48px 24px" : "80px 48px",
       boxSizing: "border-box",
       fontFamily: "inherit",
@@ -151,6 +149,7 @@ export default function IndustryExpertise() {
           fontSize: isMobile ? "24px" : "clamp(28px, 4vw, 40px)",
           fontWeight: 700,
           letterSpacing: "-0.5px",
+          color: "#ffffff", // Sharp contrast alignment
           margin: isMobile ? "0 0 32px" : "0 0 56px",
         }}>
           Industry Expertise
@@ -193,9 +192,10 @@ export default function IndustryExpertise() {
                     aspectRatio: "4 / 3",
                     borderRadius: "4px",
                     overflow: "hidden",
-                    background: "#111",
+                    background: "#111111",
                     transition: cardTransition,
-                    filter:    isCenter ? "grayscale(0%)"   : "grayscale(100%)",
+                    // Kept non-centered cards slightly grayscaled/muted for high-end cinematic layer split over dark bg
+                    filter:    isCenter ? "grayscale(0%)"   : "grayscale(40%)",
                     opacity:   isCenter ? 1 : isAdjacent ? 0.45 : (isMobile ? 0 : 0.1),
                     transform: isCenter ? "scale(1)"        : (isAdjacent ? "scale(0.94)" : "scale(0.9)"),
                   }}>
@@ -218,6 +218,7 @@ export default function IndustryExpertise() {
                       fontSize: isMobile ? "18px" : "clamp(18px, 2vw, 24px)",
                       fontWeight: 600,
                       letterSpacing: "0.02em",
+                      color: "#ffffff", // Typography optimized
                       margin: 0,
                     }}>
                       {item.title}
@@ -231,6 +232,7 @@ export default function IndustryExpertise() {
 
         <div style={{
           display: "flex",
+          justify: "flex-end",
           justifyContent: "flex-end",
           gap: "32px",
           marginTop: isMobile ? "28px" : "48px",
@@ -242,6 +244,7 @@ export default function IndustryExpertise() {
               style={{
                 background: "none", border: "none", cursor: "pointer",
                 padding: "8px", fontSize: "24px",
+                color: "#ffffff", // Standard dark controller visibility parameters
                 lineHeight: 1, transition: "opacity 0.2s",
                 opacity: 0.5,
               }}

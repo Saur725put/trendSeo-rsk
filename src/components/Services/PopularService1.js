@@ -10,7 +10,7 @@ const SERVICES_DATA = [
     title: "SXO",
     description: "Great rankings mean nothing without great user experience. Our SXO approach delivers both traffic and performance.",
     Icon: Globe,
-    iconBg: "#FFF3E0",
+    iconBg: "rgba(249, 115, 22, 0.15)", // Premium dark translucent fill
     iconColor: "#F97316",
     cardBg: "#F97316",
   },
@@ -19,7 +19,7 @@ const SERVICES_DATA = [
     title: "Performance Marketing",
     description: "Results you can measure. We run data-driven campaigns that convert clicks into revenue across every platform.",
     Icon: BarChart3,
-    iconBg: "#E8F5E9",
+    iconBg: "rgba(0, 192, 127, 0.15)", // Premium dark translucent fill
     iconColor: "#00C07F",
     cardBg: "#00C07F",
   },
@@ -28,7 +28,7 @@ const SERVICES_DATA = [
     title: "Dropshipping",
     description: "From product research to fulfillment, our data-backed approach turns dropshipping into a real business.",
     Icon: Package,
-    iconBg: "#E3F2FD",
+    iconBg: "rgba(26, 115, 232, 0.15)", // Premium dark translucent fill
     iconColor: "#1A73E8",
     cardBg: "#1A73E8",
   },
@@ -38,20 +38,18 @@ export default function PopularService1() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section className="w-full bg-white text-zinc-900 py-20 px-6 md:py-24 md:px-12 lg:px-20 overflow-hidden">
+    <section className="w-full bg-[#181818] text-white py-20 px-6 md:py-24 md:px-12 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         
-        {/* Main Section Header */}
         <div className="mb-14">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 mb-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">
             Most Popular Services
           </h2>
-          <p className="text-zinc-500 text-sm md:text-base">
+          <p className="text-zinc-400 text-sm md:text-base">
             Tailored growth mechanisms optimized directly for scaling your transactional ecosystem.
           </p>
         </div>
 
-        {/* Responsive 3-Column Interactive Grid Content Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {SERVICES_DATA.map((service, index) => {
             const isHovered = hovered === service.id;
@@ -62,18 +60,18 @@ export default function PopularService1() {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transformTemplate={({ y }) => `translateY(${y})`} 
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 onMouseEnter={() => setHovered(service.id)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  backgroundColor: isHovered ? service.cardBg : "#ffffff",
+                  backgroundColor: isHovered ? service.cardBg : "#242424",
                   transition: "background-color 0.4s ease, border-color 0.4s ease",
                 }}
                 className={`relative rounded-2xl p-8 flex flex-col gap-5 cursor-pointer overflow-hidden border ${
-                  isHovered ? "border-transparent shadow-lg" : "border-zinc-200/80 shadow-sm"
+                  isHovered ? "border-transparent shadow-2xl" : "border-white/5 shadow-sm"
                 }`}
               >
-                {/* Icon Wrapper Area */}
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center transition-colors duration-400"
                   style={{
@@ -87,26 +85,23 @@ export default function PopularService1() {
                   />
                 </div>
 
-                {/* Service Dynamic Title Segment */}
                 <h3
-                  style={{ color: isHovered ? "#ffffff" : "#18181b" }}
+                  style={{ color: isHovered ? "#ffffff" : "#ffffff" }}
                   className="text-xl font-bold transition-colors duration-400"
                 >
                   {service.title}
                 </h3>
 
-                {/* Service Dynamic Content Description Area */}
                 <p
-                  style={{ color: isHovered ? "rgba(255,255,255,0.9)" : "#52525b" }}
+                  style={{ color: isHovered ? "rgba(255,255,255,0.9)" : "#a1a1aa" }}
                   className="text-sm md:text-base leading-relaxed flex-1 transition-colors duration-400"
                 >
                   {service.description}
                 </p>
 
-                {/* Interactive Smooth Link Trigger Action */}
                 <a
                   href="#"
-                  style={{ color: isHovered ? "#ffffff" : "#18181b" }}
+                  style={{ color: isHovered ? "#ffffff" : "#ffffff" }}
                   className="flex items-center gap-1.5 text-sm font-bold transition-colors duration-400 mt-2"
                 >
                   Know more
@@ -119,7 +114,6 @@ export default function PopularService1() {
                   </motion.span>
                 </a>
 
-                {/* Light Custom Radial Blend Radial Glow Overlays */}
                 {isHovered && (
                   <motion.div
                     initial={{ opacity: 0 }}

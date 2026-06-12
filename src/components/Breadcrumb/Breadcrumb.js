@@ -22,15 +22,13 @@ export default function Breadcrumb({ homeLabel = 'Home', customItems }) {
   }, [pathname]);
 
   return (
-    /* Applied the custom background color, padding, and layout wrappers here */
     <nav 
       aria-label="Breadcrumb" 
-      className="inline-flex items-center gap-2 bg-[#ddd5f2] px-4 py-2 rounded-full text-sm md:text-base font-semibold select-none shadow-sm"
+      className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-sm md:text-base font-semibold select-none shadow-sm"
     >
-      {/* Home Link */}
       <Link 
         href="/" 
-        className="flex items-center gap-1.5 text-neutral-600 hover:text-neutral-950 transition-colors duration-200"
+        className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors duration-200"
       >
         <svg 
           className="w-4 h-4 transform -translate-y-[1px]" 
@@ -44,25 +42,21 @@ export default function Breadcrumb({ homeLabel = 'Home', customItems }) {
         <span>{homeLabel}</span>
       </Link>
 
-      {/* Dynamic Segments */}
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
 
         return (
           <React.Fragment key={item.href}>
-            {/* Divider sign ">" */}
-            <span className="text-neutral-500 font-bold text-xs px-0.5">&gt;</span>
+            <span className="text-zinc-500 font-bold text-xs px-0.5">&gt;</span>
             
             {isLast ? (
-              // Current active page
-              <span className="text-neutral-950" aria-current="page">
+              <span className="text-white" aria-current="page">
                 {item.label}
               </span>
             ) : (
-              // Middle parent pages
               <Link 
                 href={item.href}
-                className="text-neutral-600 hover:text-neutral-950 transition-colors duration-200"
+                className="text-zinc-400 hover:text-white transition-colors duration-200"
               >
                 {item.label}
               </Link>

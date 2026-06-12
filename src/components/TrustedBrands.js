@@ -14,8 +14,10 @@ const duplicatedBrands = [...brands, ...brands, ...brands];
 
 export default function TrustedBrands() {
   return (
-    <section className="w-full bg-[#E8EAF6] py-12 overflow-hidden flex flex-col items-center justify-center">
-      <h4 className="text-black font-sans text-base md:text-lg font-semibold mb-8 tracking-wide">
+    // Background changed to #303030 using arbitrary Tailwind class bg-[#303030]
+    <section className="w-full bg-[#181818] py-12 overflow-hidden flex flex-col items-center justify-center">
+      {/* Changed text-black to text-zinc-300 for readability on dark background */}
+      <h4 className="text-zinc-300 font-sans text-base md:text-lg font-semibold mb-8 tracking-wide">
         Trusted by your favorite brands
       </h4>
 
@@ -35,10 +37,11 @@ export default function TrustedBrands() {
               key={index} 
               className="flex items-center justify-center h-9 w-28 md:w-36 shrink-0 select-none"
             >
+              {/* Added 'invert brightness-200' to make dark/colored logos stand out beautifully on #303030 */}
               <img
                 src={brand.logo}
                 alt={`${brand.name} logo`}
-                className="max-h-full max-w-full object-contain grayscale opacity-60 contrast-125 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale invert brightness-200 opacity-50 hover:opacity-100 hover:grayscale-0 hover:invert-0 hover:brightness-100 transition-all duration-300"
               />
             </div>
           ))}

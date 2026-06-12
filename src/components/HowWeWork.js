@@ -1,134 +1,166 @@
 "use client";
 import { motion } from "framer-motion";
-import { Search, Lightbulb, Paintbrush, Rocket } from "lucide-react";
 import { useState } from "react";
+import { TrendingUp, BarChart3, Cpu, Megaphone } from "lucide-react";
+import Typewriter from "./Typewriter";
 
-const steps = [
+const services = [
   {
     id: "01",
-    title: "Discover",
-    description: "We audit your funnel, market, and data to find the highest-leverage growth levers.",
-    Icon: Search,
-    iconBg: "#FFF3E0",
-    iconColor: "#F97316",
-    cardBg: "#F97316",
+    title: "Performance Marketing",
+    description:
+      "Full-funnel paid media across Meta, Google & TikTok — engineered around ROAS, not vanity metrics.",
+    tags: ["Paid Social", "Google Ads", "Funnels", "CRO"],
+    Icon: TrendingUp,
+    cardBg: "#1A73E8",
   },
   {
     id: "02",
-    title: "Strategize",
-    description: "A clear roadmap with channels, creative angles, and targets mapped to revenue.",
-    Icon: Lightbulb,
-    iconBg: "#E8F5E9",
-    iconColor: "#00C07F",
-    cardBg: "#00C07F",
-  },
-  {
-    id: "03",
-    title: "Create",
-    description: "Humans direct the vision; AI accelerates production across every asset and variant.",
-    Icon: Paintbrush,
-    iconBg: "#EDE7F6",
-    iconColor: "#7C4DFF",
+    title: "SEO & Content",
+    description:
+      "Rank for what your buyers actually search. Technical SEO, content engines, and authority that compounds.",
+    tags: ["Technical SEO", "Content", "Link Building"],
+    Icon: BarChart3,
     cardBg: "#7C4DFF",
   },
   {
+    id: "03",
+    title: "AI & Automation",
+    description:
+      "Custom AI workflows that draft, personalize, and optimize at a scale no human team could match.",
+    tags: ["AI Content", "Personalization", "Workflows"],
+    Icon: Cpu,
+    cardBg: "#00C07F",
+  },
+  {
     id: "04",
-    title: "Scale",
-    description: "We double down on what converts and kill what doesn't — weekly, ruthlessly.",
-    Icon: Rocket,
-    iconBg: "#E3F2FD",
-    iconColor: "#1A73E8",
-    cardBg: "#1A73E8",
+    title: "Social & Brand",
+    description:
+      "Scroll-stopping creative and community building that turns followers into a culture around your brand.",
+    tags: ["Creative", "Community", "Influencer"],
+    Icon: Megaphone,
+    cardBg: "#F97316",
   },
 ];
 
-export default function HowWeWork() {
+export default function ServicesSection() {
   const [hovered, setHovered] = useState(null);
 
   return (
     <section
-      style={{ backgroundColor: "#ffffff" }}
-      className="w-full py-24 px-6 md:px-12"
+      className="w-full min-h-screen py-24 px-6 md:px-12 bg-[#101010]"
     >
       <div className="w-full max-w-7xl mx-auto">
 
-        <div className="mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 leading-tight mb-3">
-            A process built to compound.
+        {/* Section Header */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-[2px] bg-[#1A73E8]" />
+            {/* text-zinc-500 to text-zinc-400 for better dark layout visibility */}
+            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-zinc-400">
+              What We Do
+            </span>
+          </div>
+          {/* Headline changed from text-zinc-900 to text-white */}
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-white mb-6">
+            Four engines. <br /> O<Typewriter text="ne growth machine." />
           </h2>
-          <p className="text-zinc-500 text-base">
-            Four focused steps. One compounding system.
+          {/* Subtext changed from text-zinc-600 to text-zinc-400 */}
+          <p className="text-zinc-400 text-base md:text-lg max-w-xl leading-relaxed">
+            Most agencies bolt services together. We run them as one system — so every
+            channel feeds the next and your budget works harder.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {steps.map((step, i) => {
-            const isHovered = hovered === step.id;
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {services.map((service, i) => {
+            const isHovered = hovered === service.id;
             return (
               <motion.div
-                key={step.id}
-                initial={{ opacity: 0, y: 24 }}
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                onMouseEnter={() => setHovered(step.id)}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                onMouseEnter={() => setHovered(service.id)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  backgroundColor: isHovered ? step.cardBg : "#ffffff",
+                  // Changed default state color from #ffffff to a smooth dark #242424 card color
+                  backgroundColor: isHovered ? service.cardBg : "#242424",
                   transition: "background-color 0.4s ease",
                 }}
-                className="relative rounded-2xl p-6 flex flex-col gap-4 shadow-sm cursor-pointer overflow-hidden"
+                className="relative rounded-3xl p-6 cursor-pointer overflow-hidden group"
               >
-                {/* Icon */}
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-400"
-                  style={{
-                    backgroundColor: isHovered ? "rgba(0,0,0,0.2)" : step.iconBg,
-                  }}
-                >
-                  <step.Icon size={22} color={isHovered ? "#ffffff" : step.iconColor} strokeWidth={1.8} />
+                {/* Number & Arrow Row */}
+                <div className="flex justify-between items-start mb-5">
+                  <span
+                    style={{ color: isHovered ? "rgba(255,255,255,0.5)" : "#71717a" }}
+                    className="font-mono text-sm transition-colors duration-400"
+                  >
+                    {service.id}
+                  </span>
+                  <motion.span
+                    animate={{ x: isHovered ? 2 : 0, y: isHovered ? -2 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ color: isHovered ? "rgba(255,255,255,0.7)" : "#71717a" }}
+                    className="text-lg transition-colors duration-400"
+                  >
+                    ↗
+                  </motion.span>
                 </div>
 
-                {/* Title */}
-                <h3
-                  style={{ color: isHovered ? "#ffffff" : "#18181b" }}
-                  className="text-lg font-bold transition-colors duration-400"
+                {/* Icon Container (Changed default state background to transparent/lighter dark overlay) */}
+                <div
+                  style={{
+                    backgroundColor: isHovered ? "rgba(0,0,0,0.25)" : "rgba(255, 255, 255, 0.08)",
+                  }}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors duration-400"
                 >
-                  {step.title}
+                  <service.Icon size={22} color="#BEFF44" strokeWidth={1.8} />
+                </div>
+
+                {/* Title (Changed text color from #18181b to #ffffff) */}
+                <h3
+                  style={{ color: isHovered ? "#ffffff" : "#ffffff" }}
+                  className="text-xl font-bold mb-2 transition-colors duration-400"
+                >
+                  {service.title}
                 </h3>
 
-                {/* Description */}
+                {/* Description (Changed text color from #71717a to #a1a1aa) */}
                 <p
-                  style={{ color: isHovered ? "rgba(255,255,255,0.8)" : "#71717a" }}
-                  className="text-sm leading-relaxed flex-1 transition-colors duration-400"
+                  style={{ color: isHovered ? "rgba(255,255,255,0.8)" : "#a1a1aa" }}
+                  className="text-sm leading-relaxed mb-5 transition-colors duration-400"
                 >
-                  {step.description}
+                  {service.description}
                 </p>
 
-                {/* Know more */}
-                <a
-                  href="#"
-                  style={{ color: isHovered ? "#ffffff" : "#18181b" }}
-                  className="flex items-center gap-1 text-sm font-bold transition-colors duration-400"
-                >
-                  Know more
-                  <motion.span
-                    className="text-base inline-block"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
-                  >
-                    →
-                  </motion.span>
-                </a>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      style={{
+                        backgroundColor: isHovered ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.05)",
+                        borderColor: isHovered ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.15)",
+                        color: isHovered ? "#ffffff" : "#e4e4e7",
+                      }}
+                      className="text-xs px-3 py-1.5 rounded-full border font-medium transition-all duration-400"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-                {/* Glow */}
+                {/* Subtle glow on hover */}
                 {isHovered && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="absolute inset-0 rounded-2xl pointer-events-none"
+                    className="absolute inset-0 rounded-3xl pointer-events-none"
                     style={{
-                      background: "radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%)",
+                      background: `radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%)`,
                     }}
                   />
                 )}

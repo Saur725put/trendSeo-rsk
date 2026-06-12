@@ -58,6 +58,7 @@
   display: block;
   font-size: var(--landscape-small-size);
   margin-bottom: .25rem;
+  color: rgb(27, 27, 27);
 }
 
 .card__title {

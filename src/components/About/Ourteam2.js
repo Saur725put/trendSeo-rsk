@@ -17,9 +17,9 @@ const crewCards = [
   { id: 1, src: "/images/teams/sourav.png", rot: -9, depth: 14 },
   { id: 3, src: "/images/teams/shaswat.png", rot: -2, depth: 8 },
   { id: 4, src: "/images/teams/Pratyaksh.png", rot: 3, depth: 12 },
-  { id: 5, src: "/images/teams/Sumit.png", rot: 0, depth: 6 },
+  { id: 5, src: "/images/teams/Sumit11.jpeg", rot: 0, depth: 6 },
   { id: 2, src: "/images/teams/navneet.png", rot: -5, depth: 10 },
-  { id: 7, src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop&crop=faces&q=80", rot: 7, depth: 9 },
+  { id: 7, src: "/images/teams/mahesh.jpeg", rot: 7, depth: 9 },
   { id: 8, src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&crop=faces&q=80", rot: -4, depth: 13 },
 ];
 
@@ -30,13 +30,10 @@ const Ourteam2 = () => {
   const cardsRowRef = useRef(null);
   const sublineRef = useRef(null);
 
-  // Parallax mouse variables kept outside re-renders via a mutable ref object
   const mouseCoords = useRef({ mx: 0, my: 0, tx: 0, ty: 0 });
 
   useEffect(() => {
-    // gsap.context handles scoping class matches to our current component container
     const ctx = gsap.context(() => {
-      // 1. Set Initial Properties
       gsap.set(".small-team .word > span", { y: "105%" });
       gsap.set(".big-results .letter", { y: 80, opacity: 0 });
       gsap.set(sublineRef.current, { opacity: 0, y: 20 });
@@ -47,7 +44,6 @@ const Ourteam2 = () => {
         gsap.set(card, { y: -800, rotation: rot + 25, opacity: 0, scale: 0.7 });
       });
 
-      // 2. Intro Loading Sequence Animation Timeline
       const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
       intro
         .to(".small-team .word > span", { y: "0%", duration: 0.9, stagger: 0.08 }, 0.2)
@@ -63,7 +59,6 @@ const Ourteam2 = () => {
         }, 0.6)
         .to(sublineRef.current, { opacity: 1, y: 0, duration: 0.8 }, 1.4);
 
-      // 3. Ambient Infinite Float Loop For Hero Portraits
       cards.forEach((card, i) => {
         const rot = parseFloat(card.dataset.rot || "0");
         gsap.to(card, {
@@ -77,7 +72,6 @@ const Ourteam2 = () => {
         });
       });
 
-      // 4. Hero Dispersal & Scaling Triggered By Page Scroll
       ScrollTrigger.create({
         trigger: heroRef.current,
         start: "top top",
@@ -113,7 +107,6 @@ const Ourteam2 = () => {
       });
     }, containerRef);
 
-    // 5. Dynamic Parallax Mouse Tracking Matrix Loops
     const heroEl = heroRef.current;
     const handleMouseMove = (e) => {
       if (!heroEl) return;
@@ -144,7 +137,6 @@ const Ourteam2 = () => {
     };
     parallaxLoop();
 
-    // Clean up loops and contextual animation scopes on Component Unmount
     return () => {
       ctx.revert();
       heroEl?.removeEventListener("mousemove", handleMouseMove);
@@ -153,7 +145,6 @@ const Ourteam2 = () => {
     };
   }, []);
 
-  // 6. Individual Card Hover Focus Matrices (3D Tilt Effect)
   const handleCard3DMove = (e) => {
     const card = e.currentTarget;
     const r = card.getBoundingClientRect();
@@ -193,7 +184,6 @@ const Ourteam2 = () => {
     });
   };
 
-  // 7. Letter Spacing/Hover Staggers for Header Content
   const handleBigResultsHover = () => {
     gsap.to(".big-results .letter", {
       y: -8,
@@ -223,12 +213,21 @@ const Ourteam2 = () => {
   };
 
   return (
-    <div ref={containerRef} className="overflow-x-hidden">
-      <div className="grain"></div>
+    // Outer dynamic container wrapper forcing #101010 edge-to-edge horizontally 
+    <div 
+      ref={containerRef} 
+      style={{ backgroundColor: "#101010" }} 
+      className="w-full bg-[#101010] overflow-x-hidden text-white"
+    >
+      <div className="grain opacity-20"></div>
 
-      {/* HERO SECTION */}
-      <section ref={heroRef} className="hero">
-        <h1 className="small-team" id="smallTeam">
+      {/* HERO SECTION: Content boundaries left untouched, layout gap color fixed */}
+      <section 
+        ref={heroRef} 
+        style={{ backgroundColor: "#101010" }} 
+        className="hero bg-[#101010]"
+      >
+        <h1 className="small-team text-zinc-600" id="smallTeam">
           <span className="word"><span>Small</span></span>&nbsp;
           <span className="word"><span>team,</span></span>
         </h1>
@@ -239,7 +238,7 @@ const Ourteam2 = () => {
           onMouseEnter={handleBigResultsHover}
           onMouseLeave={handleBigResultsLeave}
         >
-          <div className="big-results" id="bigResults">
+          <div className="big-results text-white" id="bigResults">
             {"big results".split("").map((char, index) => (
               <span key={index} className="letter">
                 {char === " " ? "\u00A0" : char}
@@ -273,7 +272,7 @@ const Ourteam2 = () => {
         </div>
 
         <div ref={sublineRef} className="subline" id="subline">
-          <button className="arrow-pill" onClick={handleButtonPress}>
+          <button className="arrow-pill bg-white/5 border border-white/10 text-white hover:bg-white/10" onClick={handleButtonPress}>
             Meet the crew
             <span className="ar">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -282,11 +281,10 @@ const Ourteam2 = () => {
               </svg>
             </span>
           </button>
-          <div className="subline-text">8 people. 60+ shipped projects. Zero filler.</div>
+          <div className="subline-text text-zinc-400">8 people. 60+ shipped projects. Zero filler.</div>
         </div>
       </section>
 
-      {/* NEW INTEGRATED LANDSCAPE TEAM GRID SECTION */}
       <Ourteam3 />
     </div>
   );
