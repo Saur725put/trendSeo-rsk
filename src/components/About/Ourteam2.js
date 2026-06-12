@@ -17,7 +17,7 @@ const crewCards = [
   { id: 1, src: "/images/teams/sourav.png", rot: -9, depth: 14 },
   { id: 3, src: "/images/teams/shaswat.png", rot: -2, depth: 8 },
   { id: 4, src: "/images/teams/Pratyaksh.png", rot: 3, depth: 12 },
-  { id: 5, src: "/images/teams/Sumit11.jpeg", rot: 0, depth: 6 },
+  { id: 5, src: "/images/teams/sumit11.jpeg", rot: 0, depth: 6 },
   { id: 2, src: "/images/teams/navneet.png", rot: -5, depth: 10 },
   { id: 7, src: "/images/teams/mahesh.jpeg", rot: 7, depth: 9 },
   { id: 8, src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&crop=faces&q=80", rot: -4, depth: 13 },

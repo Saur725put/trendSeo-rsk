@@ -2,7 +2,7 @@ import React from 'react';
 import '@/styles/Ourteam3Style.css'
 
 const team = [
-  { id: 1, name: "Sumit Sisodiya", role: "Founder", img: "/images/teams/Sumit11.jpeg" },
+  { id: 1, name: "Sumit Sisodiya", role: "Founder", img: "/images/teams/sumit11.jpeg" },
   { id: 2, name: "Pratyaksh Srivastava", role: "Co-Founder", img: "/images/teams/Pratyaksh.png" },
   { id: 3, name: "Garvit Sharma", role: "SEM Expert", img: "/images/teams/garvit.png" },
   { id: 4, name: "Shashwat Srivastava", role: "Performance Marketing Exec.", img: "/images/teams/shaswat.png" },
