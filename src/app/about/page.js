@@ -37,7 +37,7 @@ export default function About() {
     <>
       <AboutHeader />
       <WhoWeAre />
-      <Ourteam2 />
+      {/* <Ourteam2 /> */}
       <FaqAccordion FAQ_DATA={ABOUT_FAQ} />
     </>
   );
