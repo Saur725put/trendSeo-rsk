@@ -1,10 +1,15 @@
 "use client";
+import AdvantagesSection from "@/components/AdvantagesSection";
 import BrandShowcase from "@/components/BrandShowcase";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FaqAccordion from "@/components/FaqAccordion/FaqAccordion";
 import HeroSection from "@/components/HeroSection";
 import HowWeWork from "@/components/HowWeWork";
+import MetricsCounter from "@/components/MetricsCounter";
 import OurPartner from "@/components/OurPartner";
+import PricingSection from "@/components/PricingSection";
 import ServicesSection from "@/components/ServiceSection";
+import TechStackSection from "@/components/TechStackSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import TrustedBrands from "@/components/TrustedBrands";
 
@@ -35,11 +40,16 @@ export default function Home() {
   return (
     <>
     <HeroSection />
+    <MetricsCounter />
     <TrustedBrands />
     <ServicesSection />
+    <AdvantagesSection />
+    <TechStackSection />
     <HowWeWork />
     <BrandShowcase />
     <OurPartner />
+    <CaseStudiesSection />
+    <PricingSection />
     <TestimonialSection />
     <FaqAccordion FAQ_DATA={FAQ_DATA} />
     </>
