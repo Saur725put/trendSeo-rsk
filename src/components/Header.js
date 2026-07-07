@@ -3,10 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import logo from "../../public/images/logo/Black.jpg";
 
 export default function Header() {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const navItems = [
     { id: "home",     label: "Home",     path: "/" },
@@ -16,6 +19,14 @@ export default function Header() {
     { id: "contact",  label: "Contact",  path: "/contact" },
   ];
 
+  const serviceItems = [
+    { id: "LocalSEO",     label: "Local SEO",     path: "/services/LocalSEO" },
+    { id: "technicalSEO", label: "Technical SEO", path: "/services/technicalSEO" },
+    { id: "ecommerceSEO", label: "Ecommerce SEO", path: "/services/ecommerceSEO" },
+    { id: "shopifySEO",   label: "Shopify SEO",   path: "/services/shopifySEO" },
+  ];
+  
+
   return (
     <>
       <style>{`
@@ -23,6 +34,18 @@ export default function Header() {
         .header-nav        { display: flex; }
         .header-actions    { display: flex; }
         .header-spacer     { display: none; }
+
+        .services-dropdown {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(6px);
+          transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+        }
+        .services-dropdown.open {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
 
         @media (max-width: 920px) {
           .header-hamburger { display: flex !important; }
@@ -59,20 +82,72 @@ export default function Header() {
 
           {/* Logo Brand Frame */}
           <Link href="/" className="header-logo flex items-center gap-3 group shrink-0">
-            <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(26,115,232,0.4)] transition-transform duration-300 group-hover:scale-105">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-white">
-                <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </div>
-            <span className="text-lg font-bold tracking-wider text-white uppercase group-hover:text-zinc-300 transition-colors">
-              SEO MITRA
-            </span>
+            <img
+              src="/images/logo/Black.jpg"
+              alt="SEO Mitra Logo"
+              style={{ height: "40px", width: "auto", objectFit: "contain" }}
+              className="transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navbar Center-aligned */}
           <nav className="header-nav items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navItems.map((item) => {
               const isActive = pathname === item.path;
+
+              if (item.id === "services") {
+                return (
+                  <div
+                    key={item.id}
+                    className="relative"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
+                    <Link
+                      href={item.path}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setServicesOpen((prev) => !prev);
+                      }}
+                      style={{ WebkitTapHighlightColor: "transparent" }}
+                      className={`
+                        text-[15px] font-medium tracking-wide transition-colors duration-200 py-1 relative flex items-center gap-1
+                        ${isActive ? "text-white font-semibold" : "text-zinc-400 hover:text-white"}
+                      `}
+                    >
+                      {item.label}
+                      <span
+                        className="text-[10px] opacity-70 mt-0.5 transition-transform duration-200"
+                        style={{ transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                      >
+                        ▼
+                      </span>
+                    </Link>
+
+                    {/* Services Dropdown Panel */}
+                    <div
+                      className={`services-dropdown absolute top-full left-1/2 -translate-x-1/2 pt-4 ${servicesOpen ? "open" : ""}`}
+                    >
+                      <div
+                        style={{ backgroundColor: "#0a0a0a" }}
+                        className="min-w-[220px] rounded-2xl border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] py-2 overflow-hidden"
+                      >
+                        {serviceItems.map((sub) => (
+                          <Link
+                            key={sub.id}
+                            href={sub.path}
+                            onClick={() => setServicesOpen(false)}
+                            className="block px-5 py-3 text-[14px] font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors duration-150"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={item.id}
@@ -84,9 +159,6 @@ export default function Header() {
                   `}
                 >
                   {item.label}
-                  {item.id === "services" && (
-                    <span className="text-[10px] opacity-70 mt-0.5">▼</span>
-                  )}
                 </Link>
               );
             })}
@@ -118,15 +190,15 @@ export default function Header() {
         >
           <div
             style={{ backgroundColor: "#000000", width: "340px", maxWidth: "85vw" }}
-            className="relative h-full flex flex-col px-8 py-8 shadow-2xl border-r border-zinc-800"
+            className="relative h-full flex flex-col px-8 py-8 shadow-2xl border-r border-zinc-800 overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer header */}
             <div className="flex items-center justify-between mb-10">
               <Link href="/" onClick={() => setDrawerOpen(false)}>
                 <img
-                  src="/images/trendSEO12.jpeg"
-                  alt="TrendSEO Logo"
+                  src="/images/logo/Black.jpg"
+                  alt="SEO Mitra Logo"
                   style={{ height: "40px", width: "auto", objectFit: "contain" }}
                 />
               </Link>
@@ -148,6 +220,70 @@ export default function Header() {
             <nav className="flex flex-col">
               {navItems.map((item) => {
                 const isActive = pathname === item.path;
+
+                if (item.id === "services") {
+                  return (
+                    <div key={item.id} style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.1)" }}>
+                      <button
+                        onClick={() => setMobileServicesOpen((prev) => !prev)}
+                        style={{
+                          padding: "16px 0",
+                          fontSize: "17px",
+                          fontWeight: "700",
+                          fontFamily: "monospace",
+                          letterSpacing: "0.05em",
+                          color: isActive ? "#1A73E8" : "#e4e4e7",
+                          background: "transparent",
+                          border: "none",
+                          width: "100%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          cursor: "pointer",
+                        }}
+                      >
+                        {item.label}
+                        <span
+                          style={{
+                            fontSize: "12px",
+                            transition: "transform 0.2s ease",
+                            transform: mobileServicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                          }}
+                        >
+                          ▼
+                        </span>
+                      </button>
+
+                      {mobileServicesOpen && (
+                        <div style={{ paddingBottom: "12px" }}>
+                          {serviceItems.map((sub) => (
+                            <Link
+                              key={sub.id}
+                              href={sub.path}
+                              onClick={() => {
+                                setDrawerOpen(false);
+                                setMobileServicesOpen(false);
+                              }}
+                              style={{
+                                display: "block",
+                                padding: "12px 0 12px 16px",
+                                fontSize: "15px",
+                                fontWeight: "600",
+                                fontFamily: "monospace",
+                                letterSpacing: "0.03em",
+                                color: "#a1a1aa",
+                                textDecoration: "none",
+                              }}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.id}

@@ -1,4 +1,11 @@
 import FaqAccordion from '@/components/FaqAccordion/FaqAccordion'
+import ShopifyEngineFeaturesSection from '@/components/shopifySEO/ShopifyEngineFeaturesSection';
+import ShopifyExpectedResultsSection from '@/components/shopifySEO/ShopifyExpectedResultsSection';
+import ShopifyMapsDominationSection from '@/components/shopifySEO/ShopifyMapsDominationSection';
+import ShopifySEODefinition from '@/components/shopifySEO/ShopifySEODefinition';
+import ShopifySEOProcess from '@/components/shopifySEO/ShopifySEOProcess';
+import ShopifyTechDeploySection from '@/components/shopifySEO/ShopifyTechDeploySection';
+import ShopifyWhyBusinessNeedsThis from '@/components/shopifySEO/ShopifyWhyBusinessNeedsThis';
 import React from 'react'
 
 const FAQ_DATA = [
@@ -27,6 +34,13 @@ const FAQ_DATA = [
 const page = () => {
   return (
     <>
+      <ShopifyMapsDominationSection />
+      <ShopifySEODefinition />
+      <ShopifyWhyBusinessNeedsThis />
+      <ShopifySEOProcess />
+      <ShopifyEngineFeaturesSection />
+      <ShopifyTechDeploySection />
+      <ShopifyExpectedResultsSection />
       <FaqAccordion FAQ_DATA={FAQ_DATA} /> 
     </>
   )
