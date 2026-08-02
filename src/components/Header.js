@@ -20,7 +20,7 @@ export default function Header() {
   ];
 
   const serviceItems = [
-    { id: "LocalSEO",     label: "Local SEO",     path: "/services/LocalSEO" },
+    { id: "LocalSEO",     label: "Local SEO",     path: "/services/local-seo" },
     { id: "technicalSEO", label: "Technical SEO", path: "/services/technicalSEO" },
     { id: "ecommerceSEO", label: "Ecommerce SEO", path: "/services/ecommerceSEO" },
     { id: "shopifySEO",   label: "Shopify SEO",   path: "/services/shopifySEO" },
@@ -84,7 +84,7 @@ export default function Header() {
           <Link href="/" className="header-logo flex items-center gap-3 group shrink-0">
             <img
               src="/images/logo/Black.jpg"
-              alt="SEO Mitra Logo"
+              alt="sparrowLingo Logo"
               style={{ height: "40px", width: "auto", objectFit: "contain" }}
               className="transition-transform duration-300 group-hover:scale-105"
             />
@@ -198,7 +198,7 @@ export default function Header() {
               <Link href="/" onClick={() => setDrawerOpen(false)}>
                 <img
                   src="/images/logo/Black.jpg"
-                  alt="SEO Mitra Logo"
+                  alt="sparrowLingo Logo"
                   style={{ height: "40px", width: "auto", objectFit: "contain" }}
                 />
               </Link>

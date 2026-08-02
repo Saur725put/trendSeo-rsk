@@ -15,8 +15,8 @@ import TrustedBrands from "@/components/TrustedBrands";
 
 const FAQ_DATA = [
   {
-    question: "What makes TrendSEO different from traditional SEO agencies?",
-    answer: "Traditional SEO focuses strictly on keywords, but search engines have evolved. At TrendSEO, we track real-time search trends, leverage AI-driven content data, and combine technical SEO with broad digital marketing strategies to make sure your brand adapts faster than your competitors.",
+    question: "What makes sparrowLingo different from traditional SEO agencies?",
+    answer: "Traditional SEO focuses strictly on keywords, but search engines have evolved. At sparrowLingo, we track real-time search trends, leverage AI-driven content data, and combine technical SEO with broad digital marketing strategies to make sure your brand adapts faster than your competitors.",
   },
   {
     question: "What digital marketing services do you provide alongside SEO?",
@@ -28,7 +28,7 @@ const FAQ_DATA = [
   },
   {
     question: "Will you provide regular reports on our website's marketing performance?",
-    answer: "Absolutely. Transparency is a core value at TrendSEO. We provide intuitive, clear monthly performance dashboards tracking your organic impressions, keyword progression, ranking trends, and explicit conversion goals so you always see your exact ROI.",
+    answer: "Absolutely. Transparency is a core value at sparrowLingo. We provide intuitive, clear monthly performance dashboards tracking your organic impressions, keyword progression, ranking trends, and explicit conversion goals so you always see your exact ROI.",
   },
   {
     question: "Do you work with small businesses, or only established enterprise brands?",
@@ -41,13 +41,13 @@ export default function Home() {
     <>
     <HeroSection />
     <MetricsCounter />
-    <TrustedBrands />
+    {/* <TrustedBrands /> */}
     <ServicesSection />
     <AdvantagesSection />
     <TechStackSection />
     <HowWeWork />
-    <BrandShowcase />
-    <OurPartner />
+    {/* <BrandShowcase /> */}
+    {/* <OurPartner /> */}
     <CaseStudiesSection />
     <PricingSection />
     <TestimonialSection />

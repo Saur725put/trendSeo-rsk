@@ -19,7 +19,7 @@ const caseStudies = [
     tag: "TELEHEALTH SAAS",
     title: "Vertex Health",
     description: "Programmatic SEO + topical authority unlocked the bottom-of-funnel category in 11 months.",
-    image: "/images/b2s/client-centric-innovation.png", 
+    image: "/images/marketing_image/digital1.jpg", 
     metrics: [
       { label: "TRAFFIC", value: "+267%" },
       { label: "ARR REVENUE", value: "+$3.8M" },
@@ -31,7 +31,7 @@ const caseStudies = [
     tag: "LAW FIRM NETWORK",
     title: "Brightline Legal",
     description: "Multi-location service × city matrix drove qualified case intake across 47 metros.",
-    image: "/images/b2s/Transparency-and-integrity.png", 
+    image: "/images/marketing_image/digital3.jpg", 
     metrics: [
       { label: "TRAFFIC", value: "+184%" },
       { label: "REVENUE", value: "+$4.1M" },
@@ -42,11 +42,7 @@ const caseStudies = [
 
 export default function CaseStudiesSection() {
   return (
-    <section
-      // Main section layout wrapped strictly with Theme 2 (#181818)
-      style={{ backgroundColor: "#181818" }}
-      className="w-full py-24 px-6 md:px-12 antialiased text-white border-t border-zinc-800"
-    >
+    <section style={{ backgroundColor: "#181818" }} className="w-full py-24 px-6 md:px-12 antialiased text-white border-t border-zinc-800">
       <div className="w-full max-w-7xl mx-auto">
         
         {/* Header Block matching the layout of image_1a8813.jpg */}

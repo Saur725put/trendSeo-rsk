@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "917091632555";
-  const defaultMessage = "Hi TrendSEO, I want to know more about your services!";
+  const phoneNumber = "918630032056";
+  const defaultMessage = "Hi sparrowLingo, I want to know more about your services!";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
   const [showTooltip, setShowTooltip] = useState(false);
@@ -40,13 +40,13 @@ export default function WhatsAppButton() {
       {/* Button wrapper — handles ping rings */}
       <div className="relative">
 
-        {/* Ripple rings — deeper green for white background visibility */}
+        {/* Ripple rings — added pointer-events-none so clicks pass through directly to button */}
         <AnimatePresence>
           {ping && (
             <>
               <motion.span
                 key="ring1"
-                className="absolute inset-0 rounded-full"
+                className="absolute inset-0 rounded-full pointer-events-none"
                 style={{ background: "#128C7E" }}
                 initial={{ opacity: 0.55, scale: 1 }}
                 animate={{ opacity: 0, scale: 2.4 }}
@@ -55,7 +55,7 @@ export default function WhatsAppButton() {
               />
               <motion.span
                 key="ring2"
-                className="absolute inset-0 rounded-full"
+                className="absolute inset-0 rounded-full pointer-events-none"
                 style={{ background: "#25D366" }}
                 initial={{ opacity: 0.4, scale: 1 }}
                 animate={{ opacity: 0, scale: 1.7 }}
@@ -88,7 +88,7 @@ export default function WhatsAppButton() {
             transition: { duration: 0.4 },
           }}
           whileTap={{ scale: 0.9 }}
-          className="relative w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center cursor-pointer outline-none"
+          className="relative w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center cursor-pointer outline-none z-10"
           aria-label="Chat on WhatsApp"
           style={{
             WebkitTapHighlightColor: "transparent",
@@ -102,7 +102,7 @@ export default function WhatsAppButton() {
           >
             <motion.span
               className="absolute top-0 left-[-60%] w-[40%] h-full bg-white/30 skew-x-[-20deg]"
-              animate={{ left: ["−60%", "160%"] }}
+              animate={{ left: ["-60%", "160%"] }}
               transition={{
                 duration: 1.2,
                 repeat: Infinity,
@@ -114,7 +114,7 @@ export default function WhatsAppButton() {
 
           {/* WhatsApp icon with subtle bounce */}
           <motion.svg
-            className="w-6 h-6 fill-current"
+            className="w-6 h-6 fill-current pointer-events-none"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
             animate={{ y: [0, -1.5, 0] }}

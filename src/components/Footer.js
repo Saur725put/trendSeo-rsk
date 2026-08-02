@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const router = useRouter();
 
   return (
     // Main background locked exactly to pure black (#000000)
@@ -20,7 +22,7 @@ export default function Footer() {
                 Get Support?
               </h2>
               <a
-                href="mailto:hello@trendseo.com"
+                href="info@sparrowlingo.com"
                 className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group transition-all duration-300"
                 onMouseEnter={e => {
                   e.currentTarget.style.backgroundColor = '#1A73E8';
@@ -47,13 +49,6 @@ export default function Footer() {
                   Unit No. 259, Tower B1, SPAZE<br />
                   ITECH PARK, Sector 49,<br />
                   Gurugram
-                </p>
-              </div>
-              <div>
-                <p className="text-white font-bold text-base mb-4 tracking-wide">United States</p>
-                <p className="text-zinc-400 text-base leading-relaxed">
-                  8 The Green, St#4522, Dover,<br />
-                  Delaware 19901
                 </p>
               </div>
             </div>
@@ -96,7 +91,7 @@ export default function Footer() {
                 className="flex-1 bg-transparent px-6 py-5 text-base text-white placeholder-zinc-600 outline-none"
               />
               <button
-                onClick={() => setEmail("")}
+                onClick={() => router.push('/contact')}
                 className="px-6 py-5 text-zinc-400 hover:text-white text-xl transition-colors duration-200 cursor-pointer"
               >
                 →
@@ -150,7 +145,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-zinc-600 text-sm text-center sm:text-right">
-            Copyright © 2026 TrendSEO. All Rights Reserved
+            Copyright © 2026 sparrowLingo. All Rights Reserved
           </p>
 
         </div>

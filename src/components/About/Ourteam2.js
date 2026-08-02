@@ -213,20 +213,9 @@ const Ourteam2 = () => {
   };
 
   return (
-    // Outer dynamic container wrapper forcing #101010 edge-to-edge horizontally 
-    <div 
-      ref={containerRef} 
-      style={{ backgroundColor: "#101010" }} 
-      className="w-full bg-[#101010] overflow-x-hidden text-white"
-    >
+    <div ref={containerRef} style={{ backgroundColor: "#101010", marginTop: "-150px 0" }} className="w-full bg-[#101010] overflow-x-hidden text-white">
       <div className="grain opacity-20"></div>
-
-      {/* HERO SECTION: Content boundaries left untouched, layout gap color fixed */}
-      <section 
-        ref={heroRef} 
-        style={{ backgroundColor: "#101010" }} 
-        className="hero bg-[#101010]"
-      >
+      <section  ref={heroRef}  style={{ backgroundColor: "#101010" }}  className="hero bg-[#101010]">
         <h1 className="small-team text-zinc-600" id="smallTeam">
           <span className="word"><span>Small</span></span>&nbsp;
           <span className="word"><span>team,</span></span>
@@ -245,43 +234,6 @@ const Ourteam2 = () => {
               </span>
             ))}
           </div>
-        </div>
-
-        {/* Card Row of Portraits */}
-        <div ref={cardsRowRef} className="cards-row" id="cardsRow">
-          {crewCards.map((card) => (
-            <div
-              key={card.id}
-              className={`card card-${card.id}`}
-              data-rot={card.rot}
-              data-depth={card.depth}
-              onMouseMove={handleCard3DMove}
-              onMouseLeave={handleCard3DLeave}
-              onClick={handleCardClick}
-              style={{ willChange: "transform, opacity" }}
-            >
-              <Image 
-                src={card.src} 
-                alt="Crew member portrait" 
-                width={400} 
-                height={600}
-                priority={card.id <= 4}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div ref={sublineRef} className="subline" id="subline">
-          <button className="arrow-pill bg-white/5 border border-white/10 text-white hover:bg-white/10" onClick={handleButtonPress}>
-            Meet the crew
-            <span className="ar">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </span>
-          </button>
-          <div className="subline-text text-zinc-400">8 people. 60+ shipped projects. Zero filler.</div>
         </div>
       </section>
 

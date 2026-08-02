@@ -7,7 +7,7 @@ import React from 'react'
 const CONTACT_FAQ = [
   {
     question: "Is there a fee for the initial strategy consultation?",
-    answer: "No, your initial discovery call is completely complimentary. We use this brief session to review your core business goals, inspect your digital roadblocks, and mutually evaluate if TrendSEO is the right operational fit for your brand.",
+    answer: "No, your initial discovery call is completely complimentary. We use this brief session to review your core business goals, inspect your digital roadblocks, and mutually evaluate if sparrowLingo is the right operational fit for your brand.",
   },
   {
     question: "How quickly can we kick off a project after signing?",

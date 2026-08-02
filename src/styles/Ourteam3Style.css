@@ -1,8 +1,6 @@
 /* Unique variables prefix to avoid collisions */
 :root {
-  --landscape-first-color: hsl(82, 60%, 28%);
   --landscape-title-color: hsl(0, 0%, 15%);
-  --landscape-text-color: hsl(0, 0%, 35%);
   --landscape-container-color: hsl(0, 0%, 100%);
 
   --landscape-h2-size: 1.25rem;
@@ -68,15 +66,38 @@
   margin-bottom: .75rem;
 }
 
-.card__button {
-  text-decoration: none;
-  font-size: var(--landscape-small-size);
-  font-weight: 500;
-  color: var(--landscape-first-color);
+/* Heading block matching the reference image */
+.landscape-team-heading {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
-.card__button:hover {
-  text-decoration: underline;
+.landscape-team-heading__eyebrow {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 20%);
+  margin-bottom: -0.5rem;
+}
+
+.landscape-team-heading__title {
+  font-size: 5rem;
+  font-weight: 800;
+  font-style: italic;
+  color: hsl(45, 20%, 78%);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .landscape-team-heading__title {
+    font-size: 3rem;
+  }
+  .landscape-team-heading__eyebrow {
+    font-size: 1.1rem;
+  }
 }
 
 .card__article:hover .card__data {

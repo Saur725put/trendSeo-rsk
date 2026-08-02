@@ -1,21 +1,21 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Globe } from "lucide-react";
+import { Search, BarChart3, ShoppingCart, MapPin, KeyRound, TrendingUp, Rocket, Bug, Link2, Zap, ShoppingBag, PieChart } from "lucide-react";
 
 const tools = [
-  { id: "gsc", name: "Google Search Console", hoverBg: "#F97316" }, 
-  { id: "ga4", name: "Google Analytics 4", hoverBg: "#EAB308" },  
-  { id: "gmc", name: "Google Merchant Center", hoverBg: "#1A73E8" }, 
-  { id: "gbp", name: "Google Business Profile", hoverBg: "#7C4DFF" }, 
-  { id: "gkp", name: "Google Keyword Planner", hoverBg: "#00C07F" },
-  { id: "gtrends", name: "Google Trends", hoverBg: "#2563EB" },  
-  { id: "semrush", name: "SEMrush", hoverBg: "#EA580C" },        
-  { id: "screaming", name: "Screaming Frog", hoverBg: "#16A34A" }, 
-  { id: "ahrefs", name: "Ahrefs", hoverBg: "#2563EB" },           
-  { id: "psi", name: "PageSpeed Insights", hoverBg: "#9333EA" },  
-  { id: "shopify", name: "Shopify Plus", hoverBg: "#95BF47" },     
-  { id: "looker", name: "Looker Studio", hoverBg: "#DB2777" },     
+  { id: "gsc", name: "Google Search Console", hoverBg: "#F97316", icon: Search },
+  { id: "ga4", name: "Google Analytics 4", hoverBg: "#EAB308", icon: BarChart3 },
+  { id: "gmc", name: "Google Merchant Center", hoverBg: "#1A73E8", icon: ShoppingCart },
+  { id: "gbp", name: "Google Business Profile", hoverBg: "#7C4DFF", icon: MapPin },
+  { id: "gkp", name: "Google Keyword Planner", hoverBg: "#00C07F", icon: KeyRound },
+  { id: "gtrends", name: "Google Trends", hoverBg: "#2563EB", icon: TrendingUp },
+  { id: "semrush", name: "SEMrush", hoverBg: "#EA580C", icon: Rocket },
+  { id: "screaming", name: "Screaming Frog", hoverBg: "#16A34A", icon: Bug },
+  { id: "ahrefs", name: "Ahrefs", hoverBg: "#2563EB", icon: Link2 },
+  { id: "psi", name: "PageSpeed Insights", hoverBg: "#9333EA", icon: Zap },
+  { id: "shopify", name: "Shopify Plus", hoverBg: "#95BF47", icon: ShoppingBag },
+  { id: "looker", name: "Looker Studio", hoverBg: "#DB2777", icon: PieChart },
 ];
 
 export default function TechStackSection() {
@@ -50,6 +50,7 @@ export default function TechStackSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {tools.map((tool) => {
             const isHovered = hoveredCard === tool.id;
+            const Icon = tool.icon;
 
             return (
               <motion.div
@@ -71,7 +72,7 @@ export default function TechStackSection() {
                   }}
                   className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-400 border border-white/5 shrink-0"
                 >
-                  <Globe 
+                  <Icon
                     size={18} 
                     // High contrast neon alignment when resting, clean white when active
                     color={isHovered ? "#ffffff" : "#BEFF44"} 
