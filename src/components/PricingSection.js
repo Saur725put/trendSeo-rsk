@@ -1,5 +1,6 @@
 "use client";
 import { Check } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 const plans = [
   {
@@ -57,6 +58,7 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const router = useRouter();
   return (
     <section
       style={{ backgroundColor: "#101010" }}
@@ -85,6 +87,7 @@ export default function PricingSection() {
           {plans.map((plan) => {
             return (
               <div
+                onClick={() => router.push("/contact")}
                 key={plan.id}
                 style={{
                   // Middle card stands out in deep dark blue-ish navy block, side cards match translucent Theme 1

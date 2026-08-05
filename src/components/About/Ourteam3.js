@@ -6,7 +6,7 @@ const team = [
     id: 1, 
     name: "Sumit Sisodiya", 
     role: "Founder & CEO", 
-    img: "/images/teams/sumit11.jpeg",
+    img: "/images/teams/sumit1.jpeg",
     skills: "SEO Strategy • Brand Growth • Tech Architecture"
   },
   { 
