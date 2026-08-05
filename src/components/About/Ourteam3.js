@@ -1,16 +1,40 @@
 import React from 'react';
-import '@/styles/Ourteam3Style.css'
+import '@/styles/Ourteam3Style.css';
 
 const team = [
-  { id: 1, name: "Sumit Sisodiya", role: "Founder", img: "/images/teams/sumit11.jpeg" },
-  { id: 5, name: "Navneet Raj", role: "SEO Executive", img: "/images/teams/navneet.png" },
-  { id: 6, name: "Saurabh Kumar Singh", role: "MERN Developer", img: "/images/teams/sourav.png" },
-  { id: 7, name: "Mahesh Gajai", role: "Wordpress Developer", img: "/images/teams/mahesh.jpeg" },
+  { 
+    id: 1, 
+    name: "Sumit Sisodiya", 
+    role: "Founder & CEO", 
+    img: "/images/teams/sumit11.jpeg",
+    skills: "SEO Strategy • Brand Growth • Tech Architecture"
+  },
+  { 
+    id: 5, 
+    name: "Navneet Raj", 
+    role: "SEO Executive", 
+    img: "/images/teams/navneet.png",
+    skills: "Keyword Research • On-page SEO • Content Optimization"
+  },
+  { 
+    id: 6, 
+    name: "Saurabh Kumar Singh", 
+    role: "Full Stack Developer", 
+    img: "/images/teams/sourav.png",
+    skills: "MERN • Next.js • Performance Optimization"
+  },
+  { 
+    id: 7, 
+    name: "Mahesh Gajai", 
+    role: "Wordpress Developer", 
+    img: "/images/teams/mahesh.jpeg",
+    skills: "WordPress • WooCommerce • Elementor"
+  },
 ];
 
 const Ourteam3 = () => {
   return (
-    <div className="landscape-team-section" style={{marginTop: "-50px"}}>
+    <div className="landscape-team-section" style={{ marginTop: "-50px" }}>
       <div style={{ width: "100%", maxWidth: "1400px", margin: "0 auto", textAlign: "center", padding: "3rem 1rem 5rem" }}>
         <span
           style={{
@@ -52,9 +76,12 @@ const Ourteam3 = () => {
             <div className="card__data">
               <span className="card__description">{member.role}</span>
               <h2 className="card__title">{member.name}</h2>
-              {/* <a href="#" className="card__button">
-                Read More
-              </a> */}
+              
+              {/* Added Skills Detail Part */}
+              <div className="card__skills">
+                <span className="card__skills-bar"></span>
+                <p className="card__skills-text">{member.skills}</p>
+              </div>
             </div>
           </article>
         ))}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logo from "../../public/images/logo/Black.jpg";
+import logo from "../../public/images/logo/sparrowlogo725.jpeg";
 
 export default function Header() {
   const pathname = usePathname();
@@ -83,7 +83,7 @@ export default function Header() {
           {/* Logo Brand Frame */}
           <Link href="/" className="header-logo flex items-center gap-3 group shrink-0">
             <img
-              src="/images/logo/Black.jpg"
+              src="/images/logo/logo9.jpeg"
               alt="sparrowLingo Logo"
               style={{ height: "40px", width: "auto", objectFit: "contain" }}
               className="transition-transform duration-300 group-hover:scale-105"
@@ -197,7 +197,7 @@ export default function Header() {
             <div className="flex items-center justify-between mb-10">
               <Link href="/" onClick={() => setDrawerOpen(false)}>
                 <img
-                  src="/images/logo/Black.jpg"
+                  src="/images/logo/logo9.jpeg"
                   alt="sparrowLingo Logo"
                   style={{ height: "40px", width: "auto", objectFit: "contain" }}
                 />

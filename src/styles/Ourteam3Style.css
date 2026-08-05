@@ -118,6 +118,30 @@
   animation: remove-data 1s forwards;
 }
 
+/* Vertical Bar and Skills Text Styling */
+.card__skills {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.card__skills-bar {
+  width: 3px;
+  height: 22px;
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.card__skills-text {
+  font-size: 0.8rem;
+  color: #333333; /* FIXED: High contrast color for white background */
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 500;
+}
+
 @keyframes show-data {
   50% { transform: translateY(-10rem); }
   100% { transform: translateY(-7rem); }
