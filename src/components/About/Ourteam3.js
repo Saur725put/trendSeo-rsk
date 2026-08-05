@@ -28,7 +28,7 @@ const team = [
     name: "Mahesh Gajai", 
     role: "Wordpress Developer", 
     img: "/images/teams/mahesh.jpeg",
-    skills: "WordPress • WooCommerce • Elementor"
+    skills: "WordPress • WooCommerce • Elementor • Divi Builder"
   },
 ];
 

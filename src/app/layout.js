@@ -15,6 +15,22 @@ const karla = Karla({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${karla.variable} antialiased`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WVMFTF8YZ3"
+          strategy="beforeInteractive"
+        />
+
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WVMFTF8YZ3');
+          `}
+        </Script>
+      </head>
+
       <body className="antialiased">
         <Header />
 
@@ -26,21 +42,6 @@ export default function RootLayout({ children }) {
         <WhatsAppButton />
         <ScrollToTop />
       </body>
-
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-WVMFTF8YZ3"
-        strategy="afterInteractive"
-      />
-
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-WVMFTF8YZ3');
-        `}
-      </Script>
     </html>
   );
 }
