@@ -71,7 +71,7 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider text-zinc-400">Full Name</label>
-                <input type="text" id="fullName" required value={formData.fullName} onChange={handleChange} placeholder="John Doe" className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl focus:outline-none focus:border-white focus:bg-[#2a2a2a] text-sm text-white" />
+                <input type="text" id="fullName" required value={formData.fullName} onChange={handleChange} placeholder="Saji Doe" className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl focus:outline-none focus:border-white focus:bg-[#2a2a2a] text-sm text-white" />
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="companyName" className="text-xs font-bold uppercase tracking-wider text-zinc-400">Company Name</label>
@@ -82,7 +82,7 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label htmlFor="workEmail" className="text-xs font-bold uppercase tracking-wider text-zinc-400">Work Email</label>
-                <input type="email" id="workEmail" required value={formData.workEmail} onChange={handleChange} placeholder="john@company.com" className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl focus:outline-none focus:border-white focus:bg-[#2a2a2a] text-sm text-white" />
+                <input type="email" id="workEmail" required value={formData.workEmail} onChange={handleChange} placeholder="saji@company.com" className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl focus:outline-none focus:border-white focus:bg-[#2a2a2a] text-sm text-white" />
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="phoneNumber" className="text-xs font-bold uppercase tracking-wider text-zinc-400">Phone Number</label>
@@ -92,7 +92,7 @@ export default function ContactForm() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="websiteUrl" className="text-xs font-bold uppercase tracking-wider text-zinc-400">Website URL</label>
-              <input type="url" id="websiteUrl" required value={formData.websiteUrl} onChange={handleChange} placeholder="https://digirocket.io/" className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl focus:outline-none focus:border-white focus:bg-[#2a2a2a] text-sm text-white" />
+              <input type="url" id="websiteUrl" required value={formData.websiteUrl} onChange={handleChange} placeholder="https://sparrowlingo.com/" className="w-full px-4 py-3 bg-[#242424] border border-white/10 rounded-xl focus:outline-none focus:border-white focus:bg-[#2a2a2a] text-sm text-white" />
             </div>
 
             <div className="flex flex-col gap-2">
