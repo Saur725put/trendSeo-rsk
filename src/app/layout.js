@@ -12,10 +12,18 @@ const karla = Karla({
   variable: "--font-karla",
 });
 
+// ✅ Google Search Console Verification
+export const metadata = {
+  verification: {
+    google: "ASkDL-K1PxSeAAVcd0XWJ4yRP-nHLB0E1rwPC3RKMWU",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${karla.variable} antialiased`}>
       <head>
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WVMFTF8YZ3"
           strategy="beforeInteractive"
@@ -32,13 +40,13 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="antialiased">
-        <Header />
+        {/* <Header /> */}
 
         <main className="flex flex-col items-center justify-center">
           {children}
         </main>
 
-        <Footer />
+        {/* <Footer /> */}
         <WhatsAppButton />
         <ScrollToTop />
       </body>

@@ -36,7 +36,7 @@ const ABOUT_FAQ = [
 export default function About() {
   return (
     <>
-      <AboutHeader />
+      <AboutHeader /> 
       <WhoWeAre />
       {/* <Ourteam2 /> */}
       <Ourteam3 />

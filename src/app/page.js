@@ -1,5 +1,4 @@
 import HomeMain from "@/components/HomeMain";
-import { Metadata } from "next";
 
 export const metadata = {
   title: "Digital Marketing Agency That Drives Results | Sparrow Lingo",
@@ -25,7 +24,6 @@ export const metadata = {
     },
   ],
   publisher: "Sparrow Lingo",
-
   robots: {
     index: true,
     follow: true,
@@ -44,7 +42,5 @@ export const metadata = {
 };
 
 export default function Home() {
-  return (
-    <HomeMain />
-  );
+  return <></>;
 }
