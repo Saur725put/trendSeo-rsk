@@ -40,13 +40,13 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="antialiased">
-        {/* <Header /> */}
+        <Header />
 
         <main className="flex flex-col items-center justify-center">
           {children}
         </main>
 
-        {/* <Footer /> */}
+        <Footer />
         <WhatsAppButton />
         <ScrollToTop />
       </body>
