@@ -10,13 +10,6 @@ const team = [
     skills: "SEO Strategy • Brand Growth • Tech Architecture"
   },
   { 
-    id: 5, 
-    name: "Navneet Raj", 
-    role: "SEO Executive", 
-    img: "/images/teams/navneet.png",
-    skills: "Keyword Research • On-page SEO • Content Optimization"
-  },
-  { 
     id: 6, 
     name: "Saurabh Kumar Singh", 
     role: "Full Stack Developer", 
@@ -30,7 +23,16 @@ const team = [
     img: "/images/teams/mahesh.jpeg",
     skills: "WordPress • WooCommerce • Elementor • Divi Builder"
   },
-];
+]
+
+// ,
+//   { 
+//     id: 5, 
+//     name: "Navneet Raj", 
+//     role: "SEO Executive", 
+//     img: "/images/teams/navneet.png",
+//     skills: "Keyword Research • On-page SEO • Content Optimization"
+//   }
 
 const Ourteam3 = () => {
   return (
