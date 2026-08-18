@@ -40,15 +40,15 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="antialiased">
-        <Header />
+        {/* <Header /> */}
 
         <main className="flex flex-col items-center justify-center">
-          {children}
+          {/* {children} */}
         </main>
 
-        <Footer />
-        <WhatsAppButton />
-        <ScrollToTop />
+        {/* <Footer /> */}
+        {/* <WhatsAppButton />
+        <ScrollToTop /> */}
       </body>
     </html>
   );
